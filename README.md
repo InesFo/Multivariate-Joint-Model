@@ -46,7 +46,7 @@ $$
 ---
 
 ### Now... notation apart, how can we fit a multivariate joint model in R?  
-#### **Using the lme() function!**
+### Using the lme() function!
 
 <p align="center">
   <img width="240" height="200" src="https://user-images.githubusercontent.com/62517130/179857216-d67937c0-a740-4aa9-811b-9dea90df2aba.gif">
