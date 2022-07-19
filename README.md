@@ -6,10 +6,10 @@
 
 Consider the situation where we have, for several people:
 
-1) a repeateadly-measured outcome over time (Y variable)
+1) a repeatedly-measured outcome over time (Y variable)
 2) a time-to-event outcome (F variable).
 
-For instance, Y can be the biomarker value and F can be the time since diagnostic until surgery. Because Y and F can the associated (e.g., surgery occurs eralier for those with higher biomarker values), it is necessary to jointly model them: [Y,F].
+For instance, Y can be the biomarker value and F can be the time since diagnostic until surgery. Because Y and F can the associated (e.g., surgery occurs earlier for those with higher biomarker values), it is necessary to jointly model them: [Y,F].
 
 This model (Diggle et al., 2008) assumes that $Y$, the longitudinal process follows a normal distribution
 
@@ -83,7 +83,7 @@ Then, we can fit a single model that combines the two variables $Y$ and $S$:
 
 $$ value_{ij}= DY(\beta_0 + \beta_1 time_{ij} + U_i + Z^Y_{ij}) + DS(\beta_2 + U_i + Z^S_i) $$
 
-which, in the lme() sintax equals to:
+which, in the lme() syntax equals to:
 ```
 lme(value ~ 0 + DY + DS + DY:time , data = mydata , random = ~ 1 | id , weights = varIdent(form = ~1 |variable))
 ```
@@ -94,7 +94,7 @@ To evaluate this approach, I simulated data based on the model and fitted the mo
   <img width="302" height="440" src="https://user-images.githubusercontent.com/62517130/179860186-894dc864-a64b-40d3-bf24-5d5f0102d2c8.png">
 </p>
 
-At the end, we found that except for extremelly low parameter values, the model behaves nicely:
+At the end, we found that except for extremely low parameter values, the model behaves nicely:
 
 <p align="center">
   <img width="460" height="612" src="https://user-images.githubusercontent.com/62517130/179861143-973a1f7f-640f-4deb-91b0-5f4aa0c4d864.png">
