@@ -1,5 +1,9 @@
 # Multivariate Joint Model for Longitudinal and Time-to-event data: simulating data and fitting models
 
+> **TL; DR**: The *Model1.R* file generates multiple datasets according to a multivariate model, fits the model, and save the parameter estimates. 
+
+<br/>
+
 Consider the situation where we have, for several people:
 
 1) a repeateadly-measured outcome over time (Y variable)
@@ -57,6 +61,7 @@ $$S_{i} = \beta_2 + U_i + Z^S_i$$
 The key to implement the multivariate model [Y,S] is to transform it into a univariate model. For that, the two outcome variables are stacked, creating a new and unique variable, named, for instance, $value$. Then, binary dummy variables $DY$ and $DS$ are created to identify which values belong to the $Y$ and $S$ outcomes, respectively:
 
 <div align="center">
+  
 |id   | time   | value      | DY         | DS        | variable  |
 |---- |------- |----------- |----------- |---------- |---------- |
 |1    | 1      | $y_{11}$   | 1          | 0         |Y          |
@@ -71,6 +76,7 @@ The key to implement the multivariate model [Y,S] is to transform it into a univ
 |1    | NA     | $s_{1}$    | 0          | 1         |S          |
 |2    | NA     | $s_{2}$    | 0          | 1         |S          |
 |3    | NA     | $s_{3}$    | 0          | 1         |S          |
+
 </div>
   
 Then, we can fit a single model that combines the two variables $Y$ and $S$: 
@@ -100,7 +106,7 @@ At the end, we found that except for extremelly low parameter values, the model 
 
 ---
 ### Contents:
-
+- *Model1.R* - this file generates datasets and fit the above-mentioned model.
 
 
 
