@@ -81,7 +81,7 @@ The key to implement the multivariate model [Y,S] is to transform it into a univ
   
 Then, we can fit a single model that combines the two variables $Y$ and $S$: 
 
-$$ value_{ij}= DY(\beta_0 + \beta_1 time_{ij} + U_i + Z^Y_{ij}) + DY(\beta_2 + U_i + Z^S_i) $$
+$$ value_{ij}= DY(\beta_0 + \beta_1 time_{ij} + U_i + Z^Y_{ij}) + DS(\beta_2 + U_i + Z^S_i) $$
 
 which, in the lme() sintax equals to:
 ```
