@@ -1,6 +1,6 @@
 # Multivariate Joint Model for Longitudinal and Time-to-event data: simulating data and fitting models
 
-> **TL; DR**: The *Model1.R* file generates multiple datasets according to a multivariate model, fits the model, and save the parameter estimates. 
+> **TL; DR**: The *Model1.R* file generates multiple datasets according to a multivariate model, fits the model, and save the parameters' estimates. 
 
 <br/>
 
