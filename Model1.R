@@ -28,7 +28,8 @@ start.time <- Sys.time()
   # number of observations per subject
   # all subjects are observed same number of times
   m = 5
-  mi <- rep(m,n) 
+  mi <- rep(m,n)
+  N <- sum(mi) 
   
   # betas b0, b1, b2
   beta <- c(15, 1.2, 2)
@@ -72,18 +73,18 @@ for (k in 1:dim(simValues)[1]) {
   createVardf <- function(npart,mobsvec){
     
     # dataframe: Y11, Y12, ... , Ynm, ..., S1, ..., Sn 
-    N = sum(mobsvec) 
+    N.tot = sum(mi)
     
     # participant id
-    id <- c(rep(1:n, mi),1:n)
+    id <- c(rep(1:npart, mobsvec),1:npart)
     # Y measurement time
-    time <- c(sequence(mi,from=0),rep(0,n))
+    time <- c(sequence(mobsvec,from=0),rep(0,npart))
     # indicator variable (DY = 1 for rows with Y and DY = 0 for rows with S)
-    DY <- c(rep(1,N),rep(0,n))
+    DY <- c(rep(1,N.tot),rep(0,npart))
     # indicator variable (DS = 1 for rows with S and DS = 0 for rows with Y)
-    DS <- c(rep(0,N),rep(1,n))
+    DS <- c(rep(0,N.tot),rep(1,npart))
     # factor variable (variable = Y for rows with Y and variable = S for rows with S)
-    variable <- c(rep("Y",N),rep("S",n))
+    variable <- c(rep("Y",N.tot),rep("S",npart))
     data.frame(id,time,DY,DS,variable)
   }
   
