@@ -29,13 +29,13 @@ start.time <- Sys.time()
   # all subjects are observed same number of times
   m = 5
   mi <- rep(m,n)
-  N <- sum(mi) 
+  N = sum(mi) 
   
   # betas b0, b1, b2
   beta <- c(15, 1.2, 2)
   
   # number of simulations per each k set
-  nsim = 1000
+  nsim = 100
 }
 
 
@@ -276,5 +276,3 @@ end.time <- Sys.time()
 time.taken <- round(end.time - start.time,2)
 # print total duration
 time.taken
-
-
